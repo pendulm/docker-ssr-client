@@ -1,0 +1,9 @@
+Squid:
+  image: storezhang/ssr-client
+  container_name: ssr
+  ports:
+    - "1080:1080"
+    - "8080:8080"
+  volumes:
+    - ${PWD}/ssr-data:/ssr-data
+  restart: always
