@@ -1,3 +1,4 @@
 supervisord.log
 supervisord.pid
 ssr_config/*.json
+conf
