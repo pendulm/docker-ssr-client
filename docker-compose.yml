@@ -1,9 +1,11 @@
 Squid:
-  image: storezhang/ssr-client
-  container_name: ssr
+  image: proxybox
+  container_name: proxybox
   ports:
-    - "1080:1080"
-    - "8080:8080"
+    - "8080:7890"
+    - "1080:7891"
+    - "8081:8080"
+    - "9090:9090"
   volumes:
-    - ${PWD}/ssr-data:/ssr-data
+    - ${PWD}/conf:/home/admin/conf
   restart: always
