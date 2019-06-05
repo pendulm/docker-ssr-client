@@ -1,5 +1,5 @@
 list:
-	@ls ssr-data/ssr_config | awk -F. "{print \$$1}"
+	@ls ssr-data/ssr_config | awk -F. "{print \$$1}"| xargs
 
 up:
 	@docker-compose up -d
