@@ -1,11 +1,12 @@
 Squid:
+  #  build: ./
   image: proxybox
   container_name: proxybox
   ports:
-    - "8080:7890"
-    - "1080:7891"
-    - "8081:8080"
-    - "9090:9090"
+    - "1080:1080"
+    #  - "8080:7890"
+    #  - "8081:8080"
+    #  - "9090:9090"
   volumes:
     - ${PWD}/conf:/home/admin/conf
   restart: always

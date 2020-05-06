@@ -1,5 +1,5 @@
 list:
-	@ls ssr-data/ssr_config | awk -F. "{print \$$1}"| xargs
+	@ls conf/ssr_config | awk -F. "{print \$$1}"| xargs
 
 up:
 	@docker-compose up -d
@@ -13,9 +13,9 @@ reup:
 	@docker-compose up -d
 
 %:
-	@ln -sf ../ssr_config/$@.json ssr-data/shadowsocks/config.json
-	@ls -l ssr-data/shadowsocks/config.json
-	@docker exec -it ssr pkill -9  python
+	@cp -f conf/ssr_config/$@.json conf/ssr.json
+	@docker-compose down -v
+	@docker-compose up -d
 
 .PHONY:
 	list
